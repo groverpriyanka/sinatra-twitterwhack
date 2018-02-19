@@ -19,7 +19,7 @@ post '/results' do
 	@results = whacking_twitter.search_words(first_search_word, second_search_word)
 	@index = whacking_twitter.index
 	@score = whacking_twitter.score(first_search_word, second_search_word)
-	@example = whack.example
+	@example = whacking_twitter.example
 	if @index == 0
 		@text = "You got whacked!"
 	elsif @index < 5
