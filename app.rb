@@ -13,22 +13,13 @@ get '/' do
 end
 
 post '/results' do
-	whacking_twitter = TwitterWhacker.new
 	first_search_word = params[:first_search_word]
 	second_search_word = params[:second_search_word]
-	@results = whacking_twitter.search_words(first_search_word, second_search_word)
-	@index = whacking_twitter.index
-	@score = whacking_twitter.score(first_search_word, second_search_word)
-	@example = whacking_twitter.example
-	if @index == 0
-		@text = "You got whacked!"
-	elsif @index < 5
-		@text = "Excellent!"
-	elsif @index < 90
-		@text = "Pretty good!"
-	else
-		@text = "Try again!"
-	end
-
+	tw = TwitterWhacker.new
+	@results = tw.search_words(first_search_word, second_search_word)
+	@index = tw.index
+	@score = tw.score(first_search_word, second_search_word)
+	@example = tw.example
+	@displayText = tw.index_comment
 	erb :results
 end

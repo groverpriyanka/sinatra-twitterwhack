@@ -1,10 +1,7 @@
-<h3>Your results!</h3>
-<p><%= "Index: #{@index}" %></p>
+<h1>Thanks for TwitterWhack-ing!!! Here are your results...</h1>
 <p><%= "Score: #{@score}" %></p>
-<p><%= if @index==0
-          "No tweets were found!"
-        else
-          "Example tweet: #{@example[:text]}"
-        end%></p>
-<p><%= @text %></p>
-<a href="/">Go back to the game!</a>
+<p><%= "Index: #{@index}" %></p>
+<p><%= "Tweet Example: #{@example[:text]}" %></p>
+<strong><%= @displayText %></strong>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<a href="/">Give it another shot. Play TwitterWhack again!</a>
